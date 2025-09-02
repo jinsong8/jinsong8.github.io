@@ -47,7 +47,7 @@ I'm a second-year Ph.D. student at Gaoling School of Artifical Intelligence, Ren
 - *2021.12* National Scholarship, top 1%.
 
 # 📖 Educations
-- *2024-09 - now*, Gaoling School of Artificial Intelligence, Renmin University of China, Ph.D.
+- *2024.09 - now*, Gaoling School of Artificial Intelligence, Renmin University of China, Ph.D.
 - *2020.09 - 2024.06*, College of Computer Science and Technology, Jilin University, B.S.
 
 <!-- # 💬 Invited Talks
@@ -55,7 +55,7 @@ I'm a second-year Ph.D. student at Gaoling School of Artifical Intelligence, Ren
 - *2021.03*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  \| [\[video\]](https://github.com/) -->
 
 # 💻 Internships
-- *2025.01 - now*, Meituan, Beijing. 
+- *2025.01 - now*, Meituan, Beijing, mentored by Xun Zhang and [Guojun Yin](https://gjyin.github.io/).
 - *2023.12 - 2024.03*, Baidu, Beijing.
 
 # &nbsp;&nbsp;&nbsp;
