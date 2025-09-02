@@ -17,12 +17,14 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I'm a Ph.D. student at Gaoling School of Artifical Intelligence, Renmin University of China, under the supervision of Prof. Rui Yan. I am currently interested in Fintech, NLP and Time Series Prediction, specifically in Large Language Model, Agent, News-driven Stock Market Analysis and Stock Recommendation.
+I'm a second-year Ph.D. student at Gaoling School of Artifical Intelligence, Renmin University of China, under the supervision of Prof. <a href="https://scholar.google.com/citations?user=eLw6g-UAAAAJ">Rui Yan</a>. I am currently interested in Fintech, Agent and Reasoning.
 
 
 # 🔥 News
-- *2024-12-16*: &nbsp;🎉🎉 One work is submitted to ACL ARR 2024 December!
-- *2024-10-15*: &nbsp;🎉🎉 One work is submitted to The WebConf 2025!
+- *2025.08*: &nbsp;🎉🎉 One work is accepted by EMNLP 2025 Main!
+
+# 📝 Publications 
+- ``EMNLP 2025`` [Beyond Static Testbeds: An Interaction-Centric Agent Simulation Platform for Dynamic Recommender Systems](https://arxiv.org/abs/2505.16429), **Song Jin**, Juntian Zhang, Yuhan Liu, Xun Zhang, Yufei Zhang, Guojun Yin, Fei Jiang, Wei Lin, Rui Yan
 
 <!-- # 📝 Publications 
 
@@ -53,6 +55,7 @@ I'm a Ph.D. student at Gaoling School of Artifical Intelligence, Renmin Universi
 - *2021.03*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  \| [\[video\]](https://github.com/) -->
 
 # 💻 Internships
+- *2025.01 - now*, Meituan, Beijing. 
 - *2023.12 - 2024.03*, Baidu, Beijing.
 
 # &nbsp;&nbsp;&nbsp;
