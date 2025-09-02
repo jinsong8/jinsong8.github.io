@@ -21,7 +21,7 @@ I'm a second-year Ph.D. student at Gaoling School of Artifical Intelligence, Ren
 
 
 # 🔥 News
-- *2025.08*: &nbsp;🎉🎉 One work is accepted by EMNLP 2025 Main!
+- *2025.08*: &nbsp;🎉🎉 One paper is accepted by EMNLP 2025 Main!
 
 # 📝 Publications 
 - ``EMNLP 2025`` [Beyond Static Testbeds: An Interaction-Centric Agent Simulation Platform for Dynamic Recommender Systems](https://arxiv.org/abs/2505.16429), **Song Jin**, Juntian Zhang, Yuhan Liu, Xun Zhang, Yufei Zhang, Guojun Yin, Fei Jiang, Wei Lin, Rui Yan
