@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I'm a second-year Ph.D. student at Gaoling School of Artifical Intelligence, Renmin University of China, under the supervision of Prof. <a href="https://scholar.google.com/citations?user=eLw6g-UAAAAJ">Rui Yan</a> and Prof. <a href="https://scholar.google.com/citations?user=eLw6g-UAAAAJ](https://scholar.google.com/citations?user=vVhmzbAAAAAJ&hl)">Yong Liu</a>. I am currently interested in Fintech, Agent and Reasoning.
+I'm a second-year Ph.D. student at Gaoling School of Artifical Intelligence, Renmin University of China, under the supervision of Prof. <a href="https://scholar.google.com/citations?user=eLw6g-UAAAAJ">Rui Yan</a> and Prof. <a href="https://scholar.google.com/citations?user=vVhmzbAAAAAJ&hl">Yong Liu</a>. I am currently interested in Fintech, Agent and Reasoning.
 
 
 # 🔥 News
