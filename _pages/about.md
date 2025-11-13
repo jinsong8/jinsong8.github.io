@@ -25,7 +25,7 @@ I'm a second-year Ph.D. student at Gaoling School of Artifical Intelligence, Ren
 - *2025.08*: &nbsp;🎉 One paper is accepted by EMNLP 2025 Main!
 
 # 📝 Publications 
-- ``EMNLP 2025 Main`` [FinRpt: Dataset, Evaluation System and LLM-based Multi-agent Framework for Equity Research Report Generation](https://arxiv.org/abs/2511.07322), **Song Jin**, Shuqi Li, Shukun Zhang, Rui Yan
+- ``AAAI 2026`` [FinRpt: Dataset, Evaluation System and LLM-based Multi-agent Framework for Equity Research Report Generation](https://arxiv.org/abs/2511.07322), **Song Jin**, Shuqi Li, Shukun Zhang, Rui Yan
 - ``EMNLP 2025 Main`` [Beyond Static Testbeds: An Interaction-Centric Agent Simulation Platform for Dynamic Recommender Systems](https://arxiv.org/abs/2505.16429), **Song Jin**, Juntian Zhang, Yuhan Liu, Xun Zhang, Yufei Zhang, Guojun Yin, Fei Jiang, Wei Lin, Rui Yan
 - ``Arxiv`` [Tagging the Thought: Unlocking Personalization Reasoning via Reinforcement Learning](https://www.arxiv.org/abs/2509.23140), **Song Jin**, Juntian Zhang, Yong Liu, Xun Zhang, Yufei Zhang, Fei Jiang, Guojun Yin, Wei Lin, Rui Yan
 - ``Arxiv`` [ViPER: Empowering the Self-Evolution of Visual Perception Abilities in Vision-Language Model](https://arxiv.org/abs/2510.24285), Juntian Zhang, **Song Jin**, Chuanqi Cheng, Yuhan Liu, Yankai Lin, Xun Zhang, Yufei Zhang, Fei Jiang, Guojun Yin, Wei Lin, Rui Yan
