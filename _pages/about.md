@@ -27,7 +27,7 @@ I'm a second-year Ph.D. student at Gaoling School of Artifical Intelligence, Ren
 - *2025.08*: &nbsp;🎉 One paper is accepted by EMNLP 2025 Main!
 
 # 📝 Publications 
-- ``ACL 2026 Main`` DiningBench: A Hierarchical Multi-view Benchmark for Perception and Reasoning in the Dietary Domain, **Song Jin**, Juntian Zhang, Xun Zhang, Zeying Tian, Fei Jiang, Guojun Yin, Wei Lin, Yong Liu, Rui Yan
+- ``ACL 2026 Main`` [DiningBench: A Hierarchical Multi-view Benchmark for Perception and Reasoning in the Dietary Domain](https://arxiv.org/abs/2604.10425), **Song Jin**, Juntian Zhang, Xun Zhang, Zeying Tian, Fei Jiang, Guojun Yin, Wei Lin, Yong Liu, Rui Yan
 - ``ICLR 2026`` [ViPER: Empowering the Self-Evolution of Visual Perception Abilities in Vision-Language Model](https://arxiv.org/abs/2510.24285), Juntian Zhang, **Song Jin**, Chuanqi Cheng, Yuhan Liu, Yankai Lin, Xun Zhang, Yufei Zhang, Fei Jiang, Guojun Yin, Wei Lin, Rui Yan
 - ``AAAI 2026`` [FinRpt: Dataset, Evaluation System and LLM-based Multi-agent Framework for Equity Research Report Generation](https://arxiv.org/abs/2511.07322), **Song Jin**, Shuqi Li, Shukun Zhang, Rui Yan
 - ``EMNLP 2025 Main`` [Beyond Static Testbeds: An Interaction-Centric Agent Simulation Platform for Dynamic Recommender Systems](https://arxiv.org/abs/2505.16429), **Song Jin**, Juntian Zhang, Yuhan Liu, Xun Zhang, Yufei Zhang, Guojun Yin, Fei Jiang, Wei Lin, Rui Yan
