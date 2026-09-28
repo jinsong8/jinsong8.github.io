@@ -23,6 +23,7 @@ publications:
   - title: "Allocate Before You Embed: Adaptive Visual Input Allocation for Video Embeddings"
     name: "AllocEmbed"
     image: "/images/publications/allocembed.jpg"
+    image_webp: "/images/publications/allocembed.webp"
     authors: "Song Jin, Zhongtao Jiang, Chenglei Shen, Huanxuan Liao, Haozhe Chi, Zhiwei Wang, Kun Xu, Yong Liu"
     venue: "arXiv 2026"
     preprint: true
@@ -32,6 +33,7 @@ publications:
   - title: "Tagging the Thought: Unlocking Personalization Reasoning via Reinforcement Learning"
     name: "TagPR"
     image: "/images/publications/tagpr.jpg"
+    image_webp: "/images/publications/tagpr.webp"
     authors: "Song Jin, Juntian Zhang, Yong Liu, Xun Zhang, Yufei Zhang, Fei Jiang, Guojun Yin, Wei Lin, Rui Yan"
     venue: "EMNLP 2026 Main"
     first_author: true
@@ -39,6 +41,7 @@ publications:
   - title: "DiningBench: A Hierarchical Multi-view Benchmark for Perception and Reasoning in the Dietary Domain"
     name: "DiningBench"
     image: "/images/publications/diningbench.jpg"
+    image_webp: "/images/publications/diningbench.webp"
     authors: "Song Jin, Juntian Zhang, Xun Zhang, Zeying Tian, Fei Jiang, Guojun Yin, Wei Lin, Yong Liu, Rui Yan"
     venue: "ACL 2026 Main"
     first_author: true
@@ -47,6 +50,7 @@ publications:
   - title: "ViPER: Empowering the Self-Evolution of Visual Perception Abilities in Vision-Language Model"
     name: "ViPER"
     image: "/images/publications/viper.jpg"
+    image_webp: "/images/publications/viper.webp"
     authors: "Juntian Zhang, Song Jin, Chuanqi Cheng, Yuhan Liu, Yankai Lin, Xun Zhang, Yufei Zhang, Fei Jiang, Guojun Yin, Wei Lin, Rui Yan"
     venue: "ICLR 2026"
     first_author: false
@@ -55,6 +59,7 @@ publications:
   - title: "FinRpt: Dataset, Evaluation System and LLM-based Multi-agent Framework for Equity Research Report Generation"
     name: "FinRpt"
     image: "/images/publications/finrpt.jpg"
+    image_webp: "/images/publications/finrpt.webp"
     authors: "Song Jin, Shuqi Li, Shukun Zhang, Rui Yan"
     venue: "AAAI 2026"
     first_author: true
@@ -63,6 +68,7 @@ publications:
   - title: "Beyond Static Testbeds: An Interaction-Centric Agent Simulation Platform for Dynamic Recommender Systems"
     name: "RecInter"
     image: "/images/publications/recinter.jpg"
+    image_webp: "/images/publications/recinter.webp"
     authors: "Song Jin, Juntian Zhang, Yuhan Liu, Xun Zhang, Yufei Zhang, Guojun Yin, Fei Jiang, Wei Lin, Rui Yan"
     venue: "EMNLP 2025 Main"
     first_author: true

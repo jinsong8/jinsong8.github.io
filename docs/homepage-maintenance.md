@@ -12,14 +12,14 @@
 - `assets/fonts/lato/`：与原 Google Fonts CSS 相同的 Lato v25 WOFF2 文件，包含 400/700、正体/斜体及 Latin/Latin Extended 子集；保留 `font-display: swap` 和 Unicode 范围，浏览器按需下载。许可证见同目录 `OFL.txt`。
 - `_data/navigation.yml`：顶部导航。链接使用 `#about` 格式，与原版滚动高亮脚本一致。
 - `_config.yml`：姓名、头像、邮箱、Scholar 和 GitHub 等资料。邮箱使用 `author.email_display`，当前以 `[at]` 替代 `@`；`author.email` 留空，避免旧模板输出明文 `mailto:` 链接。
-- `images/publications/`：各篇论文的真实框架插图，压缩为最长边 640px、质量 75 的 JPEG；缩略图和灯箱均使用该轻量版本，保留懒加载。
+- `images/publications/`：各篇论文的真实框架插图，最长边 640px。优先使用 WebP（质量 85、method 6），JPEG 保留为兼容回退及原有图片链接。图片保留懒加载和异步解码。
 - `images/favicon-photo-32.png`、`images/favicon-photo-16.png`：由个人头像降采样得到的浏览器标签页图标。
 
 新闻不超过 12 条时全部显示，隐藏展开按钮；超过 12 条时显示最新 12 条，其余由 Show earlier news 按钮展开。`date` 使用 `2026.08` 格式，`datetime` 使用 `2026-08` 格式。
 
 研究方向放在个人介绍中，紧接合作交流邀请之前，不设独立 Research 栏目。Email 按钮定位到联系方式。邮箱的 `[at]` 写法仅减少简单地址抓取，无法保证防止垃圾邮件，也不会移除历史版本或其他网站已公开的地址。
 
-论文的 `first_author: true` 在会议信息旁显示 First author；作者列表中的 Song Jin 自动加粗。`paper` 和 `image` 必填，`code` 可选。RecInter 的完整论文标题为 Beyond Static Testbeds: An Interaction-Centric Agent Simulation Platform for Dynamic Recommender Systems。TagPR 的 EMNLP 2026 Main 录用信息由主页作者提供。
+论文的 `first_author: true` 在会议信息旁显示 First author；作者列表中的 Song Jin 自动加粗。`paper` 和 `image` 必填，`code` 和 `image_webp` 可选；有 `image_webp` 时通过 picture/source 优先选择 WebP，灯箱使用缩略图的 currentSrc，复用浏览器已选中的格式。RecInter 的完整论文标题为 Beyond Static Testbeds: An Interaction-Centric Agent Simulation Platform for Dynamic Recommender Systems。TagPR 的 EMNLP 2026 Main 录用信息由主页作者提供。
 
 ## 插图来源
 
@@ -56,5 +56,7 @@ bundle exec jekyll build
 首页不再请求 Google Fonts CSS 或 cdnjs 的 Font Awesome CSS/字体。Lato 字体从本站加载，首屏使用的 Latin 正体 400/700 通过 preload 提前请求。CSS 链接带版本参数，修改样式时同步更新参数，避免部署后短时间内混用新 HTML 与旧 CSS。
 
 访客地图及其脚本、样式已删除，不再向该地图服务发起请求。论文图片继续懒加载，并使用异步解码。
+
+WebP 由上表中的原始 PNG 生成：以白色背景合成透明通道，使用 Pillow 的 Lanczos 缩放到现有 640px 图片尺寸，以 quality=85、method=6 编码。避免把有损 JPEG 再次压缩。六张 WebP 合计 253,674 字节，原 JPEG 合计 475,095 字节，图片传输量减少约 46.6%；保留的 JPEG 仅作为回退，支持 WebP 的浏览器不会同时下载两种格式。该体积变化不等于首屏渲染时间也同比下降，实际耗时需结合网络测试判断。
 
 Lato 文件来源为原 Google Fonts 返回的 `fonts.gstatic.com/s/lato/v25/` URL；许可证来自 `google/fonts` 仓库的 `ofl/lato/OFL.txt`。SVG 和图标许可证来自 `FortAwesome/Font-Awesome` 仓库的 `6.5.1` 标签。

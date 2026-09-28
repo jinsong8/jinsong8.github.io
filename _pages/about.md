@@ -51,7 +51,10 @@ redirect_from:
     {% for paper in site.data.homepage.publications %}
     <li class="pub">
       <a class="pub-figure" href="{{ paper.image | relative_url }}" data-lightbox>
-        <img src="{{ paper.image | relative_url }}" alt="{{ paper.name }} overview figure" loading="lazy" decoding="async">
+        <picture>
+          {% if paper.image_webp %}<source srcset="{{ paper.image_webp | relative_url }}" type="image/webp">{% endif %}
+          <img src="{{ paper.image | relative_url }}" alt="{{ paper.name }} overview figure" loading="lazy" decoding="async">
+        </picture>
       </a>
       <div class="pub-body">
         <p class="pub-title">{{ paper.title }}</p>

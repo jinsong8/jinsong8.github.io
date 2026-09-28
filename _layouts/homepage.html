@@ -13,7 +13,7 @@
 
   <link rel="preload" href="{{ '/assets/fonts/lato/lato-v25-latin-400-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="{{ '/assets/fonts/lato/lato-v25-latin-700-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="{{ '/assets/css/homepage.css' | relative_url }}?v=20260928-perf2">
+  <link rel="stylesheet" href="{{ '/assets/css/homepage.css' | relative_url }}?v=20260928-webp">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ '/images/favicon-photo-32.png' | relative_url }}">
   <link rel="icon" type="image/png" sizes="16x16" href="{{ '/images/favicon-photo-16.png' | relative_url }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
@@ -142,7 +142,7 @@
       el.addEventListener('click', e => {
         e.preventDefault();
         const img = el.querySelector('img');
-        openLightbox(el.getAttribute('href'), img ? img.alt : '');
+        openLightbox(img ? (img.currentSrc || img.src) : el.getAttribute('href'), img ? img.alt : '');
       });
     });
     lbClose.addEventListener('click', closeLightbox);
