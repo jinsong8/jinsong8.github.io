@@ -29,7 +29,10 @@ redirect_from:
     </ul>
   </div>
   <div class="about-photo">
-    <img src="{{ site.author.avatar | relative_url }}" alt="Portrait of Song Jin" width="200" height="200">
+    <picture>
+      <source type="image/webp" srcset="{{ site.author.avatar_webp_200 | relative_url }} 200w, {{ site.author.avatar_webp_400 | relative_url }} 400w" sizes="(max-width: 720px) 140px, 200px">
+      <img src="{{ site.author.avatar | relative_url }}" alt="Portrait of Song Jin" width="200" height="200" decoding="async" fetchpriority="high">
+    </picture>
   </div>
 </section>
 
@@ -52,8 +55,8 @@ redirect_from:
     <li class="pub">
       <a class="pub-figure" href="{{ paper.image | relative_url }}" data-lightbox>
         <picture>
-          {% if paper.image_webp %}<source srcset="{{ paper.image_webp | relative_url }}" type="image/webp">{% endif %}
-          <img src="{{ paper.image | relative_url }}" alt="{{ paper.name }} overview figure" loading="lazy" decoding="async">
+          {% if paper.thumbnail_webp %}<source srcset="{{ paper.thumbnail_webp | relative_url }}" type="image/webp">{% endif %}
+          <img src="{{ paper.thumbnail | default: paper.image | relative_url }}" alt="{{ paper.name }} overview figure" loading="lazy" decoding="async">
         </picture>
       </a>
       <div class="pub-body">

@@ -13,7 +13,7 @@
 
   <link rel="preload" href="{{ '/assets/fonts/lato/lato-v25-latin-400-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="{{ '/assets/fonts/lato/lato-v25-latin-700-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="{{ '/assets/css/homepage.css' | relative_url }}?v=20260928-webp">
+  <link rel="stylesheet" href="{{ '/assets/css/homepage.css' | relative_url }}?v=20260928-thumbnails">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ '/images/favicon-photo-32.png' | relative_url }}">
   <link rel="icon" type="image/png" sizes="16x16" href="{{ '/images/favicon-photo-16.png' | relative_url }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
@@ -59,7 +59,8 @@
     <div class="lightbox-backdrop"></div>
     <div class="lightbox-frame">
       <button id="lightbox-close" aria-label="Close">{% include homepage-icon.html name="xmark" %}</button>
-      <img id="lightbox-img" src="" alt="">
+      <img id="lightbox-img" alt="">
+      <a id="lightbox-original" target="_blank" rel="noopener">Open full-size image</a>
     </div>
   </div>
 
@@ -126,23 +127,52 @@
     const lb = document.getElementById('lightbox');
     const lbImg = document.getElementById('lightbox-img');
     const lbClose = document.getElementById('lightbox-close');
-    function openLightbox(src, alt) {
-      lbImg.src = src;
+    const lbOriginal = document.getElementById('lightbox-original');
+    let lightboxRequest = 0;
+    let lightboxCloseTimer;
+    function openLightbox(src, alt, previewSrc) {
+      clearTimeout(lightboxCloseTimer);
+      const request = ++lightboxRequest;
+      lbImg.src = previewSrc || src;
       lbImg.alt = alt || '';
+      lbOriginal.href = src;
       lb.hidden = false;
       requestAnimationFrame(() => lb.classList.add('open'));
       document.body.style.overflow = 'hidden';
+      lb.removeAttribute('aria-busy');
+      if (previewSrc && src !== previewSrc) {
+        lb.setAttribute('aria-busy', 'true');
+        // Only a click creates this request. Keep the cached thumbnail visible
+        // while the larger image loads, and ignore responses for closed figures.
+        const fullImage = new Image();
+        fullImage.onload = () => {
+          if (request !== lightboxRequest) return;
+          lbImg.src = src;
+          lb.removeAttribute('aria-busy');
+        };
+        fullImage.onerror = () => {
+          if (request === lightboxRequest) lb.removeAttribute('aria-busy');
+        };
+        fullImage.src = src;
+      }
     }
     function closeLightbox() {
+      ++lightboxRequest;
+      lb.removeAttribute('aria-busy');
       lb.classList.remove('open');
-      setTimeout(() => { lb.hidden = true; lbImg.src = ''; }, 220);
+      lightboxCloseTimer = setTimeout(() => {
+        lb.hidden = true;
+        lbImg.removeAttribute('src');
+        lbOriginal.removeAttribute('href');
+      }, 220);
       document.body.style.overflow = '';
     }
     document.querySelectorAll('[data-lightbox]').forEach(el => {
       el.addEventListener('click', e => {
         e.preventDefault();
         const img = el.querySelector('img');
-        openLightbox(img ? (img.currentSrc || img.src) : el.getAttribute('href'), img ? img.alt : '');
+        const previewSrc = img ? (img.currentSrc || img.src) : '';
+        openLightbox(el.getAttribute('href'), img ? img.alt : '', previewSrc);
       });
     });
     lbClose.addEventListener('click', closeLightbox);
