@@ -92,7 +92,6 @@ experience:
     team: "XiaoTuan"
     company: "Meituan"
     location: "Beijing"
-    detail: 'Mentored by Xun Zhang and <a href="https://gjyin.github.io/">Guojun Yin</a>.'
   - dates: "Dec. 2023 – Mar. 2024"
     company: "Baidu"
     location: "Beijing"
@@ -111,6 +110,6 @@ awards:
 academic_services:
   - role: "Reviewer"
     venues:
-      - "ACL ARR"
+      - "ACL ARR 2026"
       - "AAAI 2027"
       - "ICLR 2027"
