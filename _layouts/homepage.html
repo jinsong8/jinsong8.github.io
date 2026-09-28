@@ -11,11 +11,9 @@
   <meta name="keywords"
     content="Song Jin, 金松, foundation models, post-training, multimodal understanding, multimodal generation, Renmin University of China">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap">
-  <link rel="stylesheet" href="{{ "/assets/css/homepage.css" | relative_url }}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preload" href="{{ '/assets/fonts/lato/lato-v25-latin-400-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ '/assets/fonts/lato/lato-v25-latin-700-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{{ '/assets/css/homepage.css' | relative_url }}?v=20260928-perf">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ '/images/favicon-photo-32.png' | relative_url }}">
   <link rel="icon" type="image/png" sizes="16x16" href="{{ '/images/favicon-photo-16.png' | relative_url }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
@@ -42,7 +40,8 @@
         {% endfor %}
       </nav>
       <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-        <i class="fas fa-moon" aria-hidden="true"></i>
+        {% include homepage-icon.html name="moon" %}
+        {% include homepage-icon.html name="sun" %}
       </button>
     </div>
   </header>
@@ -53,16 +52,14 @@
 
   <footer class="footer">
     <p>© <span id="year"></span> Song Jin · Last updated <span id="updated"></span></p>
-    <div style="max-width: 220px; margin: 20px auto 0;">
-      <script async id="clustrmaps" src="https://clustrmaps.com/map_v2.js?d=29hIXgkmYwSDnTbNoex3hcJy3TESQ4-cpM21lTZR6zQ&amp;cl=ffffff&amp;w=a"></script>
-    </div>
+    <div id="visitor-map" class="visitor-map" data-src="https://clustrmaps.com/map_v2.js?d=29hIXgkmYwSDnTbNoex3hcJy3TESQ4-cpM21lTZR6zQ&amp;cl=ffffff&amp;w=a"></div>
   </footer>
 
   <!-- Lightbox -->
   <div id="lightbox" role="dialog" aria-modal="true" aria-label="Paper figure" hidden>
     <div class="lightbox-backdrop"></div>
     <div class="lightbox-frame">
-      <button id="lightbox-close" aria-label="Close"><i class="fas fa-xmark" aria-hidden="true"></i></button>
+      <button id="lightbox-close" aria-label="Close">{% include homepage-icon.html name="xmark" %}</button>
       <img id="lightbox-img" src="" alt="">
     </div>
   </div>
@@ -77,14 +74,10 @@
     // ── Theme toggle ─────────────────────────────
     const html = document.documentElement;
     const themeToggle = document.getElementById('theme-toggle');
-    const themeIcon = themeToggle.querySelector('i');
-    function setIcon(t) { themeIcon.className = t === 'dark' ? 'fas fa-sun' : 'fas fa-moon'; }
-    setIcon(html.getAttribute('data-theme'));
     themeToggle.addEventListener('click', () => {
       const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
       html.setAttribute('data-theme', next);
       localStorage.setItem('theme', next);
-      setIcon(next);
     });
 
     // ── Scrollspy ────────────────────────────────
@@ -158,6 +151,26 @@
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape' && !lb.hidden) closeLightbox();
     });
+  </script>
+  <script>
+    // Keep visit counting, but move the optional third-party map request until
+    // after the page has loaded and the browser has an idle moment.
+    window.addEventListener('load', () => {
+      const map = document.getElementById('visitor-map');
+      function loadMap() {
+        const script = document.createElement('script');
+        script.id = 'clustrmaps';
+        script.async = true;
+        script.src = map.dataset.src;
+        script.addEventListener('error', () => { map.hidden = true; });
+        map.appendChild(script);
+      }
+      if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(loadMap, { timeout: 2000 });
+      } else {
+        setTimeout(loadMap, 0);
+      }
+    }, { once: true });
   </script>
   {% if site.google_analytics_id and site.google_analytics_id != '' %}
   {% include analytics.html %}

@@ -23,9 +23,9 @@ redirect_from:
     <p id="research">My research focuses on <strong>post-training for foundation models</strong>, with an emphasis on <strong>multimodal understanding and generation</strong>.</p>
     <p id="contact"><strong>I welcome research collaborations and discussions.</strong> Feel free to reach out at <span>{{ site.author.email_display }}</span>.</p>
     <ul class="social" aria-label="Links">
-      <li><a href="#contact" title="Contact email"><i class="fas fa-envelope" aria-hidden="true"></i><span>Email</span></a></li>
-      <li><a href="{{ site.author.googlescholar }}" title="Google Scholar"><i class="fas fa-graduation-cap" aria-hidden="true"></i><span>Scholar</span></a></li>
-      <li><a href="https://github.com/{{ site.author.github }}" title="GitHub"><i class="fab fa-github" aria-hidden="true"></i><span>GitHub</span></a></li>
+      <li><a href="#contact" title="Contact email">{% include homepage-icon.html name="envelope" %}<span>Email</span></a></li>
+      <li><a href="{{ site.author.googlescholar }}" title="Google Scholar">{% include homepage-icon.html name="graduation-cap" %}<span>Scholar</span></a></li>
+      <li><a href="https://github.com/{{ site.author.github }}" title="GitHub">{% include homepage-icon.html name="github" %}<span>GitHub</span></a></li>
     </ul>
   </div>
   <div class="about-photo">
@@ -51,7 +51,7 @@ redirect_from:
     {% for paper in site.data.homepage.publications %}
     <li class="pub">
       <a class="pub-figure" href="{{ paper.image | relative_url }}" data-lightbox>
-        <img src="{{ paper.image | relative_url }}" alt="{{ paper.name }} overview figure" loading="lazy">
+        <img src="{{ paper.image | relative_url }}" alt="{{ paper.name }} overview figure" loading="lazy" decoding="async">
       </a>
       <div class="pub-body">
         <p class="pub-title">{{ paper.title }}</p>
