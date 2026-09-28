@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <title>{{ site.title | escape }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Song Jin">
+  <meta name="description"
+    content="{{ site.description | escape }}">
+  <meta name="keywords"
+    content="Song Jin, 金松, foundation models, post-training, multimodal understanding, multimodal generation, Renmin University of China">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+  <link rel="stylesheet" href="{{ "/assets/css/homepage.css" | relative_url }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/images/favicon-photo-32.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/images/favicon-photo-16.png' | relative_url }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta property="og:title" content="{{ site.title | escape }}">
+  <meta property="og:description" content="{{ site.description | escape }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+
+  <script>
+    (function () {
+      const t = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="#top">Song Jin</a>
+      <nav class="nav-links" aria-label="Primary">
+        {% for item in site.data.navigation.main %}
+        <a href="{{ item.url }}">{{ item.title }}</a>
+        {% endfor %}
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon" aria-hidden="true"></i>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    {{ content }}
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Song Jin · Last updated <span id="updated"></span></p>
+    <div style="max-width: 220px; margin: 20px auto 0;">
+      <script async id="clustrmaps" src="https://clustrmaps.com/map_v2.js?d=29hIXgkmYwSDnTbNoex3hcJy3TESQ4-cpM21lTZR6zQ&amp;cl=ffffff&amp;w=a"></script>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Paper figure" hidden>
+    <div class="lightbox-backdrop"></div>
+    <div class="lightbox-frame">
+      <button id="lightbox-close" aria-label="Close"><i class="fas fa-xmark" aria-hidden="true"></i></button>
+      <img id="lightbox-img" src="" alt="">
+    </div>
+  </div>
+
+  <script>
+    // ── Footer dates ─────────────────────────────
+    const now = new Date();
+    document.getElementById('year').textContent = now.getFullYear();
+    document.getElementById('updated').textContent =
+      now.toLocaleString('en-US', { year: 'numeric', month: 'short' });
+
+    // ── Theme toggle ─────────────────────────────
+    const html = document.documentElement;
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = themeToggle.querySelector('i');
+    function setIcon(t) { themeIcon.className = t === 'dark' ? 'fas fa-sun' : 'fas fa-moon'; }
+    setIcon(html.getAttribute('data-theme'));
+    themeToggle.addEventListener('click', () => {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      setIcon(next);
+    });
+
+    // ── Scrollspy ────────────────────────────────
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const sectionMap = new Map();
+    navLinks.forEach(link => {
+      const id = link.getAttribute('href').slice(1);
+      const sec = document.getElementById(id);
+      if (sec) sectionMap.set(sec, link);
+    });
+    const sections = Array.from(sectionMap.keys());
+    const MARKER_Y = 100; // px below viewport top (under sticky nav)
+    function updateActive() {
+      let active = sections[0];
+      for (const sec of sections) {
+        if (sec.getBoundingClientRect().top - MARKER_Y <= 0) {
+          active = sec;
+        } else {
+          break;
+        }
+      }
+      const activeLink = sectionMap.get(active);
+      if (!activeLink || activeLink.classList.contains('active')) return;
+      navLinks.forEach(l => l.classList.remove('active'));
+      activeLink.classList.add('active');
+    }
+    window.addEventListener('scroll', updateActive, { passive: true });
+    window.addEventListener('resize', updateActive);
+    updateActive();
+
+    // ── Nav border on scroll ─────────────────────
+    const nav = document.querySelector('.nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
+
+    // ── News collapse ────────────────────────────
+    const newsToggle = document.getElementById('news-toggle');
+    const newsList = document.querySelector('.news-list');
+    newsToggle.addEventListener('click', () => {
+      const expanded = newsList.classList.toggle('expanded');
+      newsToggle.textContent = expanded ? 'Hide earlier news' : 'Show earlier news';
+      newsToggle.setAttribute('aria-expanded', expanded);
+    });
+
+    // ── Lightbox ─────────────────────────────────
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightbox-img');
+    const lbClose = document.getElementById('lightbox-close');
+    function openLightbox(src, alt) {
+      lbImg.src = src;
+      lbImg.alt = alt || '';
+      lb.hidden = false;
+      requestAnimationFrame(() => lb.classList.add('open'));
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      lb.classList.remove('open');
+      setTimeout(() => { lb.hidden = true; lbImg.src = ''; }, 220);
+      document.body.style.overflow = '';
+    }
+    document.querySelectorAll('[data-lightbox]').forEach(el => {
+      el.addEventListener('click', e => {
+        e.preventDefault();
+        const img = el.querySelector('img');
+        openLightbox(el.getAttribute('href'), img ? img.alt : '');
+      });
+    });
+    lbClose.addEventListener('click', closeLightbox);
+    lb.querySelector('.lightbox-backdrop').addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && !lb.hidden) closeLightbox();
+    });
+  </script>
+  {% if site.google_analytics_id and site.google_analytics_id != '' %}
+  {% include analytics.html %}
+  {% endif %}
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+# Newest entries first. Keep first_author aligned with the published author order.
+news:
+  - date: "2026.08"
+    datetime: "2026-08"
+    text: '<a href="https://arxiv.org/abs/2509.23140">TagPR</a> has been accepted to <strong>EMNLP 2026 Main</strong> (first author)!'
+  - date: "2026.07"
+    datetime: "2026-07"
+    text: 'Selected by the <strong>2026 Tencent Rhino-Bird Elite Talent Program</strong>.'
+  - date: "2026.04"
+    datetime: "2026-04"
+    text: '<a href="https://arxiv.org/abs/2604.10425">DiningBench</a> has been accepted to <strong>ACL 2026 Main</strong> (first author)!'
+  - date: "2026.01"
+    datetime: "2026-01"
+    text: '<a href="https://arxiv.org/abs/2510.24285">ViPER</a> has been accepted to <strong>ICLR 2026</strong>. Congrats to Juntian!'
+  - date: "2025.11"
+    datetime: "2025-11"
+    text: '<a href="https://arxiv.org/abs/2511.07322">FinRpt</a> has been accepted to <strong>AAAI 2026</strong> (first author)!'
+  - date: "2025.08"
+    datetime: "2025-08"
+    text: '<a href="https://arxiv.org/abs/2505.16429">RecInter</a> has been accepted to <strong>EMNLP 2025 Main</strong> (first author)!'
+
+publications:
+  - title: "Allocate Before You Embed: Adaptive Visual Input Allocation for Video Embeddings"
+    name: "AllocEmbed"
+    image: "/images/publications/allocembed.jpg"
+    authors: "Song Jin, Zhongtao Jiang, Chenglei Shen, Huanxuan Liao, Haozhe Chi, Zhiwei Wang, Kun Xu, Yong Liu"
+    venue: "arXiv 2026"
+    preprint: true
+    first_author: true
+    paper: "https://arxiv.org/abs/2609.01778"
+    code: "https://github.com/jinsong8/AllocEmbed"
+  - title: "Tagging the Thought: Unlocking Personalization Reasoning via Reinforcement Learning"
+    name: "TagPR"
+    image: "/images/publications/tagpr.jpg"
+    authors: "Song Jin, Juntian Zhang, Yong Liu, Xun Zhang, Yufei Zhang, Fei Jiang, Guojun Yin, Wei Lin, Rui Yan"
+    venue: "EMNLP 2026 Main"
+    first_author: true
+    paper: "https://arxiv.org/abs/2509.23140"
+  - title: "DiningBench: A Hierarchical Multi-view Benchmark for Perception and Reasoning in the Dietary Domain"
+    name: "DiningBench"
+    image: "/images/publications/diningbench.jpg"
+    authors: "Song Jin, Juntian Zhang, Xun Zhang, Zeying Tian, Fei Jiang, Guojun Yin, Wei Lin, Yong Liu, Rui Yan"
+    venue: "ACL 2026 Main"
+    first_author: true
+    paper: "https://arxiv.org/abs/2604.10425"
+    code: "https://github.com/meituan/DiningBench"
+  - title: "ViPER: Empowering the Self-Evolution of Visual Perception Abilities in Vision-Language Model"
+    name: "ViPER"
+    image: "/images/publications/viper.jpg"
+    authors: "Juntian Zhang, Song Jin, Chuanqi Cheng, Yuhan Liu, Yankai Lin, Xun Zhang, Yufei Zhang, Fei Jiang, Guojun Yin, Wei Lin, Rui Yan"
+    venue: "ICLR 2026"
+    first_author: false
+    paper: "https://arxiv.org/abs/2510.24285"
+    code: "https://github.com/JuntianZhang1216/ViPER"
+  - title: "FinRpt: Dataset, Evaluation System and LLM-based Multi-agent Framework for Equity Research Report Generation"
+    name: "FinRpt"
+    image: "/images/publications/finrpt.jpg"
+    authors: "Song Jin, Shuqi Li, Shukun Zhang, Rui Yan"
+    venue: "AAAI 2026"
+    first_author: true
+    paper: "https://arxiv.org/abs/2511.07322"
+    code: "https://github.com/jinsong8/FinRpt"
+  - title: "Beyond Static Testbeds: An Interaction-Centric Agent Simulation Platform for Dynamic Recommender Systems"
+    name: "RecInter"
+    image: "/images/publications/recinter.jpg"
+    authors: "Song Jin, Juntian Zhang, Yuhan Liu, Xun Zhang, Yufei Zhang, Guojun Yin, Fei Jiang, Wei Lin, Rui Yan"
+    venue: "EMNLP 2025 Main"
+    first_author: true
+    paper: "https://arxiv.org/abs/2505.16429"
+    code: "https://github.com/jinsong8/RecInter"
+
+education:
+  - dates: "Sep. 2024 – Present"
+    degree: "Ph.D."
+    institution: "Renmin University of China"
+    detail: "Gaoling School of Artificial Intelligence"
+  - dates: "Sep. 2020 – Jun. 2024"
+    degree: "B.S."
+    institution: "Jilin University"
+    detail: "College of Computer Science and Technology"
+
+experience:
+  - dates: "Jul. 2026 – Present"
+    team: "WeChat AI"
+    company: "Tencent"
+    location: "Beijing"
+  - dates: "Apr. 2026 – Jul. 2026"
+    team: "TikTok"
+    company: "ByteDance"
+    location: "Beijing"
+  - dates: "Jan. 2025 – Apr. 2026"
+    team: "XiaoTuan"
+    company: "Meituan"
+    location: "Beijing"
+    detail: 'Mentored by Xun Zhang and <a href="https://gjyin.github.io/">Guojun Yin</a>.'
+  - dates: "Dec. 2023 – Mar. 2024"
+    company: "Baidu"
+    location: "Beijing"
+
+awards:
+  - date: "2026.07"
+    datetime: "2026-07"
+    text: 'Selected by the <strong>2026 Tencent Rhino-Bird Elite Talent Program</strong>.'
+  - date: "2022.12"
+    datetime: "2022-12"
+    text: '<strong>National Scholarship</strong> <span class="muted">(Top 1%)</span>'
+  - date: "2021.12"
+    datetime: "2021-12"
+    text: '<strong>National Scholarship</strong> <span class="muted">(Top 1%)</span>'
+
+academic_services:
+  - role: "Reviewer"
+    venues:
+      - "ACL ARR"
+      - "AAAI 2027"
+      - "ICLR 2027"

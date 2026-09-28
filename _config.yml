@@ -6,8 +6,10 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-title                    : "Song Jin's Homepage"
-description              : "All journeys are scenery."
+title                    : "Song Jin (金松) — Homepage"
+description              : "Song Jin is a Ph.D. student at Renmin University of China, focusing on post-training for foundation models, with an emphasis on multimodal understanding and generation."
+url                      : "https://jinsong8.github.io"
+baseurl                  : ""
 repository               : "jinsong8/jinsong8.github.io"
 google_scholar_stats_use_cdn : false
 
@@ -28,7 +30,8 @@ author:
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=TFPShNsAAAAJ"
-  email            : "jinsong8@ruc.edu.cn"
+  email            :
+  email_display    : "jinsong8 [at] ruc.edu.cn"
   researchgate     :  # e.g., "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
