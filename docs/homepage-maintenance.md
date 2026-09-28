@@ -49,12 +49,12 @@ bundle exec jekyll serve
 bundle exec jekyll build
 ```
 
-首页仍为 `/`，保留 `/about/` 和 `/about.html` 跳转以及原有版块锚点。原有访客地图和已配置时的 Google Analytics 也保留。
+首页仍为 `/`，保留 `/about/` 和 `/about.html` 跳转以及原有版块锚点。仅在配置了 Google Analytics ID 时加载对应统计脚本。
 
 ## 加载优化
 
 首页不再请求 Google Fonts CSS 或 cdnjs 的 Font Awesome CSS/字体。Lato 字体从本站加载，首屏使用的 Latin 正体 400/700 通过 preload 提前请求。CSS 链接带版本参数，修改样式时同步更新参数，避免部署后短时间内混用新 HTML 与旧 CSS。
 
-访客地图在页面 `load` 之后利用空闲回调加载一次（最多等待 2 秒），不支持空闲回调时使用 setTimeout；脚本失败时隐藏地图容器。地图无需滚动到页尾即可计数，第三方脚本不再参与初始页面加载。论文图片继续懒加载，并使用异步解码。
+访客地图及其脚本、样式已删除，不再向该地图服务发起请求。论文图片继续懒加载，并使用异步解码。
 
 Lato 文件来源为原 Google Fonts 返回的 `fonts.gstatic.com/s/lato/v25/` URL；许可证来自 `google/fonts` 仓库的 `ofl/lato/OFL.txt`。SVG 和图标许可证来自 `FortAwesome/Font-Awesome` 仓库的 `6.5.1` 标签。

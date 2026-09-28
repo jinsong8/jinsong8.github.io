@@ -374,12 +374,6 @@ main {
 [data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 [data-theme="dark"] .theme-toggle .icon-sun { display: inline-block; }
 
-.visitor-map {
-  max-width: 220px;
-  min-height: 1px;
-  margin: 20px auto 0;
-}
-
 /* ─────────── Sections ─────────── */
 .section {
   padding: 32px 0 8px;

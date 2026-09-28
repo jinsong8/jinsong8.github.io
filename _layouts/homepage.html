@@ -13,7 +13,7 @@
 
   <link rel="preload" href="{{ '/assets/fonts/lato/lato-v25-latin-400-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="{{ '/assets/fonts/lato/lato-v25-latin-700-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="{{ '/assets/css/homepage.css' | relative_url }}?v=20260928-perf">
+  <link rel="stylesheet" href="{{ '/assets/css/homepage.css' | relative_url }}?v=20260928-perf2">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ '/images/favicon-photo-32.png' | relative_url }}">
   <link rel="icon" type="image/png" sizes="16x16" href="{{ '/images/favicon-photo-16.png' | relative_url }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
@@ -52,7 +52,6 @@
 
   <footer class="footer">
     <p>© <span id="year"></span> Song Jin · Last updated <span id="updated"></span></p>
-    <div id="visitor-map" class="visitor-map" data-src="https://clustrmaps.com/map_v2.js?d=29hIXgkmYwSDnTbNoex3hcJy3TESQ4-cpM21lTZR6zQ&amp;cl=ffffff&amp;w=a"></div>
   </footer>
 
   <!-- Lightbox -->
@@ -151,26 +150,6 @@
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape' && !lb.hidden) closeLightbox();
     });
-  </script>
-  <script>
-    // Keep visit counting, but move the optional third-party map request until
-    // after the page has loaded and the browser has an idle moment.
-    window.addEventListener('load', () => {
-      const map = document.getElementById('visitor-map');
-      function loadMap() {
-        const script = document.createElement('script');
-        script.id = 'clustrmaps';
-        script.async = true;
-        script.src = map.dataset.src;
-        script.addEventListener('error', () => { map.hidden = true; });
-        map.appendChild(script);
-      }
-      if ('requestIdleCallback' in window) {
-        window.requestIdleCallback(loadMap, { timeout: 2000 });
-      } else {
-        setTimeout(loadMap, 0);
-      }
-    }, { once: true });
   </script>
   {% if site.google_analytics_id and site.google_analytics_id != '' %}
   {% include analytics.html %}
