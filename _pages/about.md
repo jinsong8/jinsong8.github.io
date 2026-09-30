@@ -20,7 +20,7 @@ redirect_from:
       Prof. <a class="advisor-link" href="https://scholar.google.com/citations?user=eLw6g-UAAAAJ">Rui Yan</a>
       and Prof. <a class="advisor-link" href="https://scholar.google.com/citations?user=vVhmzbAAAAAJ">Yong Liu</a>.
     </p>
-    <p id="research">My research focuses on <strong>post-training for foundation models</strong>, with an emphasis on <strong>multimodal understanding and generation</strong>.</p>
+    <p id="research">My research focuses on <strong>post-training for foundation models</strong>, spanning <strong>multimodal understanding, reasoning, and generation</strong> as well as <strong>multimodal agent training</strong>.</p>
     <p id="contact"><strong>I welcome research collaborations and discussions.</strong> Feel free to reach out at <span>{{ site.author.email_display }}</span>.</p>
     <ul class="social" aria-label="Links">
       <li><a href="#contact" title="Contact email">{% include homepage-icon.html name="envelope" %}<span>Email</span></a></li>
