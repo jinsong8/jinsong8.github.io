@@ -17,8 +17,8 @@ redirect_from:
     <p>
       I am a Ph.D. student at the Gaoling School of Artificial Intelligence,
       Renmin University of China (RUC), advised by
-      Prof. <a href="https://scholar.google.com/citations?user=eLw6g-UAAAAJ">Rui Yan</a>
-      and Prof. <a href="https://scholar.google.com/citations?user=vVhmzbAAAAAJ">Yong Liu</a>.
+      Prof. <a class="advisor-link" href="https://scholar.google.com/citations?user=eLw6g-UAAAAJ">Rui Yan</a>
+      and Prof. <a class="advisor-link" href="https://scholar.google.com/citations?user=vVhmzbAAAAAJ">Yong Liu</a>.
     </p>
     <p id="research">My research focuses on <strong>post-training for foundation models</strong>, with an emphasis on <strong>multimodal understanding and generation</strong>.</p>
     <p id="contact"><strong>I welcome research collaborations and discussions.</strong> Feel free to reach out at <span>{{ site.author.email_display }}</span>.</p>

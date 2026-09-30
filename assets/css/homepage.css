@@ -302,6 +302,8 @@ main {
   color: var(--text);
 }
 
+.about-text .advisor-link { color: inherit; }
+
 .about-text .contact a { font-weight: 500; }
 
 /* Photo */
